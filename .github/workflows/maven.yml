@@ -22,5 +22,12 @@ jobs:
         java-version: 11
         distribution: 'adopt'
         cache: maven
-    - name: Build with f-car-park-service
+        
+    - name: Build with cf-car-park-interface
+      run: mvn -B package --file cf-internet-of-things/cf-car-park-interface/pom.xml
+    - name: Build with cf-car-park-domain
+      run: mvn -B package --file cf-internet-of-things/cf-car-park-domain/pom.xml
+    - name: Build with cf-car-park-service
+      run: mvn -B package --file cf-internet-of-things/cf-car-park-dao/pom.xml
+    - name: Build with cf-car-park-service
       run: mvn -B package --file cf-internet-of-things/cf-car-park-service/pom.xml
